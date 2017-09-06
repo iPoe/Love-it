@@ -22,10 +22,10 @@
 //Brute force
 
 int amount(char chain){
-    int n= strlen(cadena), a=0;
+    int n= strlen(chain), a=0;
 
     for(int i=1;i<n;i++){
-        if(cadena[i]==o)
+        if(chain[i]==0)
             a+=1;
         else
 
@@ -33,7 +33,10 @@ int amount(char chain){
 
 }
 
-
+int main()
+{
+    amount("1000001");
+}
 
 
 
