@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+using namespace std;
 
 //Function that returns the amount of 0s of a chain
 
@@ -21,21 +22,24 @@
         */
 //Brute force
 
-int amount(char chain){
+int amount(char chain[]){
     int n= strlen(chain), a=0;
 
-    for(int i=1;i<n;i++){
-        if(chain[i]==0)
+    for(int i=0;i<n;i++){
+        if(chain[i]=='0'){
             a+=1;
-        else
+        }
+
 
     }
+    return a;
 
 }
 
-int main()
-{
-    amount("1000001");
+int main(){
+
+    char x[]="1000001";
+    printf("%i",amount(x));
 }
 
 
