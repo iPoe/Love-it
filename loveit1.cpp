@@ -1,25 +1,53 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+
 using namespace std;
+
+char* split(char* cadena, int ini,int fin){
+        int tamano=fin+ini;
+        char* res=(char*)malloc(tamano);
+        for(int i=0; i<tamano;i++){
+            res[i]=cadena[i+ini];
+        }
+        res[tamano]='\0';
+        return res;
+
+
+}
 
 //Function that returns the amount of 0s of a chain
 
-/*int cantidad(char cadena){
+int cantidad(char* cadena){
 
     //We got the size of the char
     int n= strlen(cadena);
 
-    int counter= 0;//This variable contains the amount of 0s
-    if(cadena[0]==0)
-        counter+=1;
+    if(n==1){
+        if(cadena[0]=='0'){
 
-    else
-        cantidad(cadena)
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+
+
+
+    else{
+        char* res = split(cadena,n/2,n);
+        char* res1 = split(cadena,0,n/2);
+
+        return cantidad(res)+cantidad(res1);
+
+    }
 
 }
 
-        */
+
+
+
 //Brute force
 
 int amount(char chain[]){
@@ -38,8 +66,10 @@ int amount(char chain[]){
 
 int main(){
 
-    char x[]="1000001";
-    printf("%i",amount(x));
+    char x[]="100000";
+    //printf("%i",amount(x));
+    printf("%i",cantidad(x));
+
 }
 
 
