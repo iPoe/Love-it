@@ -17,10 +17,10 @@ int* split(int* cadena, int ini,int fin){
  int negative(int* arreglo,int n){
 
 
-    int counter=0;
+
      if(n==1){
         if(arreglo[0]<0){
-            counter+=1;
+            return 1;
         }
         else{
             return 0;
@@ -30,13 +30,12 @@ int* split(int* cadena, int ini,int fin){
      else{
         int* arra=split(arreglo,0,n/2);
         int* arra1=split(arreglo,n/2,n);
-        negative(arra,n);
-        //negative(arra1,n/2-n);
-        //return negative(arra,n/2)+negative(arra1,n-n/2);
+        int x=n-n/2;
+        return negative(arra,n/2)+negative(arra1,x);
      }
-return counter;
+
  }
  int main(){
-     int hola[]={1,-1,2,-2};
-    cout<<negative(hola,3);
+     int hola[]={1,-1,2,-2,-3};
+    cout<<negative(hola,5);
  }
