@@ -3,6 +3,7 @@
 #include <string.h>
 
 using namespace std;
+//Function that split a string
 
 char* split(char* cadena, int ini,int fin){
         int tamano=fin+ini;
